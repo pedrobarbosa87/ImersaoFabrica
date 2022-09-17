@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    
+    table {
+    border-collapse: collapse;
+    width: 70%;
+
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+
+    }
+
+    tr:nth-child(even){background-color: rgba(0, 191, 255, 0.911);}
+
+    th {
+        background-color: blue;
+        color: black;
+    }
+
+    input[type=submit] {
+        background-color: gray;
+        color: black;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    
+     <h2>Controle Financeiro</h2>
+     <table>
+        <tr>
+            <th>Descricao</th>
+            <th>Data</th>
+            <th>Valor Unitario</th>
+            <th>Categoria</th>
+            <th>Valor com Desconto</th>
+        </tr>
+
+        {% for transacao in transacoes %}
+            <tr>
+               <td><a href="{% url 'url_update' transacao.id %}"><b>{{ transacao.descricao }}</b></a></td>
+               <td> {{transacao.data}}</td> 
+               <td> {{ transacao.valorUnitario }}</td>
+               <td> {{ transacao.categoria }}</td>
+               <td> {{ transacao.valorDesconto }} </td>
+            </tr>   
+
+
+
+        {% endfor %}
+     </table>
+
+     <br><br><form action="{% url 'url_nova' %}"><input type="submit" value="Novo"/></form>
+
+     
+</body>
+</html>
