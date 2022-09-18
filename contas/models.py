@@ -17,6 +17,7 @@ class Transacao(models.Model):
     valorUnitario = models.DecimalField(max_digits=7, decimal_places=2)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     observacoes = models.TextField(null=True, blank=True)
+    localCompra = models.CharField(max_length=200, null=True)
     
     
 

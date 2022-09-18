@@ -4,4 +4,4 @@ from .models import Transacao
 class TransacaoForm(ModelForm):
     class Meta:
         model = Transacao
-        fields = ['data', 'descricao', 'valorUnitario','observacoes', 'categoria' ]
+        fields = ['data', 'descricao', 'valorUnitario','observacoes', 'categoria', 'localCompra' ]

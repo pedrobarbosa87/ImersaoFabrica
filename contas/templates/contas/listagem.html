@@ -49,7 +49,7 @@
             <th>Data</th>
             <th>Valor Unitario</th>
             <th>Categoria</th>
-            <th>Valor com Desconto</th>
+            <th>Local da Compra</th>
         </tr>
 
         {% for transacao in transacoes %}
@@ -58,7 +58,7 @@
                <td> {{transacao.data}}</td> 
                <td> {{ transacao.valorUnitario }}</td>
                <td> {{ transacao.categoria }}</td>
-               <td> {{ transacao.valorDesconto }} </td>
+               <td> {{ transacao.localCompra }} </td>
             </tr>   
 
 
